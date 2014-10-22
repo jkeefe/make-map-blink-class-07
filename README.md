@@ -39,13 +39,43 @@ This is taken directly from the Adafruit [instructions](https://learn.adafruit.c
 - Use jumper wire to connect one of the holes in row 2 to the red + column on that side of the board. This will connect the second leg of the LED to power.
 - Use jumper wire to connect one of the holes in row 3 to the black - column. This will connect the third leg of the LED to ground.
 - Ignore the fourth leg for a moment.
-- Use jumper wire to connet one of the holes in row 1 to the Digital 6 pin on your Arduino. That will be our data wire!
-- Use jumper wire to connect one of the holes in the red + column to "+5V" on the Arduino, for power.
-- Lastly,use jumper wire to connect one of the holes in the black + column to "GND" on the Arduino.
 
-##Code it up
+##Connect to your Arduino
 
 - Plug your Arduino into your computer, if you haven't already
 - Be sure to link your computer to your board using:
 	- Tools -> Board -> Arduino Uno
 	- Tools -> Serial Port -> /dev/tty.usbmodem...
+- Use jumper wire to connet one of the holes in row 1 to the Digital 6 pin on your Arduino. That will be our data wire!
+- Use jumper wire to connect one of the holes in the red + column to "+5V" on the Arduino, for power.
+- Lastly, use jumper wire to connect one of the holes in the black + column to "GND" on the Arduino.
+
+##Code it up
+
+- Find the "LED_Neopixel_Gumdrops.ino" link in this repository, and click on it.
+- Copy the code
+- Back in your Arduino program, start a new sketch with File -> New
+- Paste the code into the blank window
+- Upload it to the Arduino
+
+Play with the colors in the line `uint32_t color = gumdrops.Color(50, 0, 0);`
+
+##Chain 'em up
+
+- OK, now take a second Neopixel LED and put it on the breadboard, too -- but make sure it's first leg (the one on the round side, not the flat side) goes in a hole that in the row shared by the previous LED's last leg!
+- These are "Data IN" (round side) and "Data OUT" (flat side) ... and is how the chain communicates!
+- Give the new LED power: 
+   - Use jumper wire to connect one of the holes shared by its second leg to the red + column on that side of the board. 
+   - Use jumper wire to connect one of the holes shared by its third leg to the black - column.
+   
+Now we have to fix the code a little!
+
+- Change the line `#define NUMBER_OF_LEDS 1` to 2 (because now there are two!)
+- And ADD a new line in the void loop: `uint32_t color2 = gumdrops.Color(0, 100, 0);`
+- And ADD a new line a little lower down: `gumdrops.setPixelColor(2, color2);`
+
+Send it to your Arduino!
+
+With more LED, you can make more addressable pixels!
+   
+
