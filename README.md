@@ -6,7 +6,7 @@ To get all of the files for this lesson, use the "Download Zip button over there
 
 ###Files Used: 
 
-Everything in the folder "live demo" (included in this repo).
+The LED\_Neopixel\_Gumdrops.ino file (included in this repo).
 
 
 ###Quick intro
@@ -52,7 +52,7 @@ This is taken directly from the Adafruit [instructions](https://learn.adafruit.c
 
 ##Code it up
 
-- Find the "LED_Neopixel_Gumdrops.ino" link in this repository, and click on it.
+- Find the "LED\_Neopixel_Gumdrops.ino" link in this repository, and click on it.
 - Copy the code
 - Back in your Arduino program, start a new sketch with File -> New
 - Paste the code into the blank window
